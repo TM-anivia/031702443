@@ -65,9 +65,7 @@ else:
     list.append('')
 
 flag = re.match('.+?(?:号|村)', cache).group()  #号
-flag1 = re.match('.+委会', cache).group()
-flag1 = flag1.replace(flag, '', 1)
-if (flag != None) and (flag1 != "委会") :
+if (flag != None) :
     aaa = re.search('.+?(?:号|村)', cache).group()
     cache = cache.replace(aaa, '', 1)
     list.append(aaa)
