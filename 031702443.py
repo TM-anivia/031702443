@@ -11,10 +11,10 @@ list = []
 cache = re.sub('\d!','',cache)
 
 name = re.search('.+,', cache).group()  #提取名字
-dict["姓名"] = re.search('[^,]+', name).group()
+dict['姓名'] = re.search('[^,]+', name).group()
 cache = re.sub('.+,', '', cache)
 
-dict["手机"]= re.search('\d{11}', cache).group()   #提取号码
+dict['手机']= re.search('\d{11}', cache).group()   #提取号码
 cache = re.sub('\d{11}', '', cache)
 
 aaa = re.search('.{2}', cache).group()  #省
