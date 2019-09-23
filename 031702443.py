@@ -3,7 +3,7 @@
 import re
 import json
 
-cache = input('请输入地址：')
+cache = input()
 
 dict = {}
 list = []
