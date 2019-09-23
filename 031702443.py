@@ -64,7 +64,7 @@ if flag != None :
 else:
     list.append('')
 
-flag = re.search('.+?(?:号|村)', cache).group()  #号
+flag = re.search('.+?(?:号|村)', cache)  #号
 if (flag != None) :
     aaa = re.search('.+?(?:号|村)', cache).group()
     cache = cache.replace(aaa, '', 1)
