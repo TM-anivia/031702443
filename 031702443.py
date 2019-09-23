@@ -18,7 +18,7 @@ dict["手机"]= re.search('\d{11}', cache).group()  #提取号码
 cache = re.sub('\d{11}', '', cache)
 
 aaa = re.search('.{2}', cache).group()  #省
-flag = re.match('.+?省', cache)
+flag = re.search('.+?省', cache)
 if aaa == '北京' or aaa == '天津' or aaa == '重庆' or aaa == '上海' :
     list.append(aaa)
 elif flag != None :
@@ -30,7 +30,7 @@ else:
     cache = cache.replace(aaa, '', 1)
     list.append(aaa+'省')
 
-flag = re.match('.+?市', cache)  #市
+flag = re.search('.+?市', cache)  #市
 if flag != None :
     aaa = re.search('.+?市', cache).group()
     cache = cache.replace(aaa, '', 1)
@@ -40,7 +40,7 @@ else:
     cache = cache.replace(aaa, '', 1)
     list.append(aaa+'市')
 
-flag = re.match('.+?(?:县|区)', cache)  #县/区
+flag = re.search('.+?(?:县|区)', cache)  #县/区
 if flag != None :
     aaa = re.search('.+?(?:县|区)', cache).group()
     cache = cache.replace(aaa, '', 1)
@@ -48,7 +48,7 @@ if flag != None :
 else:
     list.append('')
 
-flag = re.match('..+?(?:镇|街道)', cache)  #镇/街道/乡
+flag = re.search('..+?(?:镇|街道)', cache)  #镇/街道/乡
 if flag != None :
     aaa = re.search('..+?(?:镇|街道|乡)', cache).group()
     cache = cache.replace(aaa, '', 1)
@@ -64,7 +64,7 @@ if flag != None :
 else:
     list.append('')
 
-flag = re.match('.+?(?:号|村)', cache).group()  #号
+flag = re.search('.+?(?:号|村)', cache).group()  #号
 if (flag != None) :
     aaa = re.search('.+?(?:号|村)', cache).group()
     cache = cache.replace(aaa, '', 1)
@@ -72,7 +72,7 @@ if (flag != None) :
 else:
     list.append('')
 
-flag = re.match('[^\.]+', cache)  #具体地址
+flag = re.search('[^\.]+', cache)  #具体地址
 if flag != None :
     aaa = re.search('[^\.]+', cache).group()
     list.append(aaa)
